@@ -4,18 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+CA:wght@100..400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Beiruti:wght@200..900&family=Playwrite+CA:wght@100..400&display=swap" rel="stylesheet">
     
     <title>Library App</title>
 </head>
 <body>
     <div id="container">
-        <div id="sidebar">
-            <button id="addbook-btn">Add new Book</button>
+        <div id="header">
+            <h1>Library App</h1>
+            <button id="addbook-btn"><img src="imgs/book-plus.svg" alt="add book icon">Add</button>
+
         </div>
-        <h1>Library App</h1>
-        <div id="body">
+        <div id="library-container">
+            <div id="book-main">
+                <form  id="book_form">
+                    <div id="close_form">
+                        <button id="closebtn">X</button>
+                    </div>
+                    <div class="form_input">
+                        <label for="title">Title:</label>
+                        <input id="title" name="title" type="text">
+                    </div>
+                    <div class="form_input">                    
+                        <label for="author">Author:</label>
+                        <input id="author" name="author" type="text">
+                    </div>
+                    <div class="form_input">
+                        <label for="page_nums"> Total Pages:</label>
+                        <input type="number" id="page_nums" name="page_nums">
+                    </div>
+                    <div id="checkbox-container">    
+                        <label for="haveRead">Have Read?</label>
+                        <div id="checkbox-btn">
+                            <input type="checkbox" id="haveRead" name="haveRead"> 
+                        </div>
+                    </div>
+                    <di id="submit-btn">
+                        <button  type="submit">Add Book</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
+<script src="scripts.js"></script>
 </body>
 </html>
