@@ -21,9 +21,10 @@
         <div id="library-container">
             <div id="book-main">
                 <form  id="book_form">
-                    <div id="close_form">
-                        <button id="closebtn">X</button>
+                    <div class="close_form">
+                        <button class="closebtn">X</button>
                     </div>
+                    <h2 class="form-title">Add Book</h2>
                     <div class="form_input">
                         <label for="title">Title:</label>
                         <input id="title" name="title" type="text">
@@ -36,16 +37,72 @@
                         <label for="page_nums"> Total Pages:</label>
                         <input type="number" id="page_nums" name="page_nums">
                     </div>
-                    <div id="checkbox-container">    
+                    <div class="form_input">
+                        <label for="description"> Description:</label>
+                        <textarea id="description" name="description" col="2" rows="4"></textarea>
+                    </div>
+                    <div class="checkbox-container">    
                         <label for="haveRead">Have Read?</label>
-                        <div id="checkbox-btn">
-                            <input type="checkbox" id="haveRead" name="haveRead"> 
+                        <div class="checkbox-btn">
+                            <input type="checkbox" class="haveRead" name="haveRead"> 
                         </div>
                     </div>
-                    <di id="submit-btn">
-                        <button  type="submit">Add Book</button>
+                    <div class="submit-container">
+                        <button id="submit-btn" type="submit">Add Book</button>
                     </div>
                 </form>
+                <form  id="update_form">
+                    <div class="close_form">
+                        <button id="update_closebtn">X</button>
+                    </div>
+                    <h2 class="form-title">Edit</h2>
+                    <div class="form_input">
+                        <label for="update_title">Title:</label>
+                        <input id="update_title" name="title" type="text" required>
+                    </div>
+                    <div class="form_input">                    
+                        <label for="update_author">Author:</label>
+                        <input id="update_author" name="author" type="text" required>
+                    </div>
+                    <div class="form_input">
+                        <label for="update_page_nums"> Total Pages:</label>
+                        <input type="number" id="update_page_nums" name="page_nums" required>
+                    </div>
+                    <div class="form_input">
+                        <label for="update_description"> Description:</label>
+                        <textarea id="update_description" name="description" col="2" rows="4" required></textarea>
+                    </div>
+                    <div class="checkbox-container">    
+                        <label for="update_haveRead">Have Read?</label>
+                        <div class="checkbox-btn">
+                            <input type="checkbox" class="haveRead" name="haveRead"> 
+                        </div>
+                    </div>
+                    <div class="submit-container">
+                        <button id="update_submit-btn" type="submit">Update</button>
+                    </div>
+                </form>
+                <div class="book_display">
+                    <div class="book_title">
+                        <h4 class="book-header">Harry Potter and the Prisoner of Azkhaban</h4>
+                        <h4 class="book-header">JK Rowling</h4>
+                    </div>
+                    <h4 class="book-body">Pages: 254</h4>
+                    <div>
+                        <h4 class="book-body">Description: </h4>
+                        <p class="book-desc">Harry Potter ventures into the prison of Azkhaban to
+                            rescue his uncle from the dementors.
+                        </p>
+                    </div>
+                    <div class="checkbox-container">
+                        <h4 class="book-body" for="haveRead">Have Read?</h4>
+                        <input  type="checkbox" id="haveRead" name="haveRead"> 
+                    </div>
+                    <div id="book_buttons">                    
+                        <button id="edit-btn"><img id="delete_icon" src="imgs/book-edit-outline.svg" alt="delete">Edit</button>
+                        <button id="delete-btn"><img id="delete_icon" src="imgs/delete-forever.svg" alt="delete">Delete</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
