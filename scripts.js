@@ -8,20 +8,32 @@ const pageNumsInput = document.querySelector("#page_nums");
 const descInput = document.querySelector("#description");
 const checkboxInput = document.querySelector(".haveRead"); 
 const addBookForm = document.querySelector("#book_form");
+const editForm = document.querySelector("#update_form");
+const editCloseBtn = document.querySelector("#edit-closebtn");
+const updateSubmitBtn = document.querySelector("#update_submit-btn");
+
+const updateTitle = document.querySelector("#update_title");
+const updateAuthor = document.querySelector("#update_author");
+const updatePagenums = document.querySelector("#update_page_nums");
+const updateDesc = document.querySelector("#update_description");
+const updateCheckbox = document.querySelector("#update_haveRead");
 
 const library = [];
 
 openForm.addEventListener("click", (e) =>{
-
-    console.log(addBookForm.style.display);
     addBookForm.style.display = "flex";
-
 })
 
 closeBtn.addEventListener("click", (e) =>{
     e.preventDefault();
     addBookForm.style.display = "none"; 
-    
+ 
+    });
+
+editCloseBtn.addEventListener("click", (e) =>{
+    e.preventDefault();
+    editForm.style.display = "none";
+
     });
 
 
@@ -98,14 +110,46 @@ function printBookDetails(){
     });
 }
 
+function updateBookDetails(){
+
+}
+
 
 bookContainer.addEventListener("click", (e) => {
     if (e.target.matches("#edit-btn")) {
         // Handle edit button click
+        editForm.style.display = "flex";    
+        const title = e.target.closest(".book_display").getAttribute("data-title");
+  
+
+        updateSubmitBtn.addEventListener("click", (e) =>{
+            e.preventDefault();
+
+            const index = library.findIndex(book => book.title === title);
+            const BooktoUpdate = library[index];
+
+            BooktoUpdate.title = updateTitle.value
+            BooktoUpdate.author = updateAuthor.value;
+            BooktoUpdate.pageNum = updatePagenums.value;
+            BooktoUpdate.desc = updateDesc.value;
+            BooktoUpdate.haveRead = updateCheckbox.value;
+
+         
+            console.log(library);
+            console.log(BooktoUpdate);
+                    console.log(updateTitle.value);
+
+        });
+
         const index = library.findIndex(book => book.title === title);
+        const BooktoUpdate = library[index];
 
+        console.log(BooktoUpdate.title);
+        e.target.closest(".book_display").setAttribute("data-title", BooktoUpdate.title);          
 
-        console.log(getAttribute)
+        
+     
+
         // Add your edit logic here
     } else if (e.target.matches("#delete-btn")) {
         // Handle delete button click

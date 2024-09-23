@@ -86,6 +86,43 @@ button > img {
 
 }
 
+#update_form {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 20px;
+    gap: 18px;
+    border: 6px solid #0d49cbd5;
+    min-width: 400px;
+    background-color: #cbd5e1;
+    position: absolute;
+    left: 50%;
+    margin-left: -200px;
+    z-index: 2;
+
+}
+
+.form-title {
+    font-size: 2.4rem;
+    font-family: "Beiruti", sans-serif;
+    position: relative;
+    left: 50%;
+    margin-left: -30px;
+    color: #0d49cbd5;
+}
+
+.update-form-title{
+    width: 60px;
+    margin-left: -30px;
+
+}
+
+.addBook-form-title{
+    width: 130px;
+    margin-left: -65px;
+}
+
 .form_input{
     display: flex;
     gap: 10px;
@@ -139,19 +176,19 @@ div > label{
 
 }
 
-#book_form button:last-child{
+#book_form button:last-child, #update_form button:last-child{
     align-content: center;
     justify-content: center;
     color: #FFF;
 }
 
-#close_form{
+.close_form{
     display: flex;
     justify-content: end;
     
 }
 
-#close_form > button{
+.close_form > button{
     width: 30px;
     height: 30px;
     padding: 4px;
@@ -159,11 +196,14 @@ div > label{
 
 }
 
-#submit-container{
+.submit-container{
     display: flex;
     justify-content: center;
     padding-top: 10px;
 }
+
+
+
 
 
 .book_display{
